@@ -5,3 +5,5 @@
 /postfixbeat
 /postfixbeat.test
 *.pyc
+
+/vendor

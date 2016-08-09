@@ -1,0 +1,9 @@
+package: github.com/ilijamt/postfixbeat
+import:
+- package: github.com/elastic/beats
+  version: ^5.0.0-alpha4
+  subpackages:
+  - libbeat/beat
+  - libbeat/common
+  - libbeat/logp
+  - libbeat/publisher

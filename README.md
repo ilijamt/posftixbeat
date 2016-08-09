@@ -10,6 +10,16 @@ Ensure that this folder is at the following location:
 ### Requirements
 
 * [Golang](https://golang.org/dl/) 1.6.2
+* [Glide](https://glide.sh/)
+
+### Dependencies
+
+To download all dependencies run the command below. This will generate all of them
+in a local directory called vendor.
+
+```
+glide install
+```
 
 ### Build
 
