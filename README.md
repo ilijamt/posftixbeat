@@ -1,4 +1,5 @@
 [![Travis](https://travis-ci.org/ilijamt/postfixbeat.svg?branch=master)](https://travis-ci.org/ilijamt/postfixbeat)
+[![GoReportCard](https://goreportcard.com/badge/github.com/ilijamt/postfixbeat)](https://goreportcard.com/badge/github.com/ilijamt/postfixbeat)
 
 # Postfixbeat
 
