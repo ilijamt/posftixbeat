@@ -13,30 +13,54 @@ import (
 )
 
 type Postfixbeat struct {
+	beatConfig *config.Config
 	done       chan struct{}
-	config     config.Config
+	period     time.Duration
 	client     publisher.Client
 }
 
 // Creates beater
-func New(b *beat.Beat, cfg *common.Config) (beat.Beater, error) {
-	config := config.DefaultConfig
-	if err := cfg.Unpack(&config); err != nil {
-		return nil, fmt.Errorf("Error reading config file: %v", err)
+func New() *Postfixbeat {
+	return &Postfixbeat{
+		done: make(chan struct{}),
+	}
+}
+
+/// *** Beater interface methods ***///
+
+func (bt *Postfixbeat) Config(b *beat.Beat) error {
+
+	// Load beater beatConfig
+	err := b.RawConfig.Unpack(&bt.beatConfig)
+	if err != nil {
+		return fmt.Errorf("Error reading config file: %v", err)
 	}
 
-	bt := &Postfixbeat{
-		done: make(chan struct{}),
-		config: config,
+	return nil
+}
+
+func (bt *Postfixbeat) Setup(b *beat.Beat) error {
+
+	// Setting default period if not set
+	if bt.beatConfig.Postfixbeat.Period == "" {
+		bt.beatConfig.Postfixbeat.Period = "1s"
 	}
-	return bt, nil
+
+	bt.client = b.Publisher.Connect()
+
+	var err error
+	bt.period, err = time.ParseDuration(bt.beatConfig.Postfixbeat.Period)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
 
 func (bt *Postfixbeat) Run(b *beat.Beat) error {
 	logp.Info("postfixbeat is running! Hit CTRL-C to stop it.")
 
-	bt.client = b.Publisher.Connect()
-	ticker := time.NewTicker(bt.config.Period)
+	ticker := time.NewTicker(bt.period)
 	counter := 1
 	for {
 		select {
@@ -56,7 +80,10 @@ func (bt *Postfixbeat) Run(b *beat.Beat) error {
 	}
 }
 
+func (bt *Postfixbeat) Cleanup(b *beat.Beat) error {
+	return nil
+}
+
 func (bt *Postfixbeat) Stop() {
-	bt.client.Close()
 	close(bt.done)
 }

@@ -3,12 +3,10 @@
 
 package config
 
-import "time"
-
 type Config struct {
-	Period time.Duration `config:"period"`
+	Postfixbeat PostfixbeatConfig
 }
 
-var DefaultConfig = Config{
-	Period: 1 * time.Second,
+type PostfixbeatConfig struct {
+	Period string `config:"period"`
 }

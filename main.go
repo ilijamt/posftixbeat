@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	err := beat.Run("postfixbeat", "", beater.New)
+	err := beat.Run("postfixbeat", "", beater.New())
 	if err != nil {
 		os.Exit(1)
 	}

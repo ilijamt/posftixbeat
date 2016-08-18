@@ -2,21 +2,21 @@ BEATNAME=postfixbeat
 BEAT_DIR=github.com/ilijamt
 SYSTEM_TESTS=false
 TEST_ENVIRONMENT=false
-ES_BEATS?=${GOPATH}/src/github.com/elastic/beats
+ES_BEATS=./vendor/github.com/elastic/beats
 GOPACKAGES=$(shell glide novendor)
 PREFIX?=.
 
 # Path to the libbeat Makefile
 -include $(ES_BEATS)/libbeat/scripts/Makefile
 
-# Initial beat setup
-.PHONY: setup
-setup:
+.PHONY: init
+init:
+	glide update --no-recursive
 	make update
-
-.PHONY: git-init
-git-init:
 	git init
+
+.PHONY: commit
+commit:
 	git add README.md CONTRIBUTING.md
 	git commit -m "Initial commit"
 	git add LICENSE
@@ -29,6 +29,14 @@ git-init:
 	git add .travis.yml
 	git commit -m "Add Travis CI"
 
+.PHONY: update-deps
+update-deps:
+	glide update --no-recursive --strip-vcs
+
 # This is called by the beats packer before building starts
 .PHONY: before-build
 before-build:
+
+# Create binary packages for the beat
+pack: create-packer
+	cd dev-tools/packer; make deps images postfixbeat

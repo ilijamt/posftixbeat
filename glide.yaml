@@ -1,9 +1,16 @@
 package: github.com/ilijamt/postfixbeat
 import:
 - package: github.com/elastic/beats
-  version: ^5.0.0-alpha4
+  version: v5.0.0-alpha5
   subpackages:
+  - filebeat/input/file
+  - filebeat/prospector
   - libbeat/beat
   - libbeat/common
   - libbeat/logp
   - libbeat/publisher
+testImport:
+- package: github.com/stretchr/testify
+  version: v1.1.3
+  subpackages:
+  - assert

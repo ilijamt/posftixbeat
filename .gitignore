@@ -1,9 +1,8 @@
 /.idea
 /build
+/vendor
 
 .DS_Store
 /postfixbeat
 /postfixbeat.test
 *.pyc
-
-/vendor
