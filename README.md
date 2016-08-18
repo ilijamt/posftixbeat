@@ -1,3 +1,5 @@
+[![Travis](https://travis-ci.org/ilijamt/postfixbeat.svg?branch=master)](https://travis-ci.org/ilijamt/postfixbeat)
+
 # Postfixbeat
 
 Welcome to Postfixbeat.
