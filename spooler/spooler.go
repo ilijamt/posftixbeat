@@ -4,9 +4,10 @@ import (
 	"sync"
 	"time"
 
-	cfg "github.com/elastic/beats/filebeat/config"
 	"github.com/elastic/beats/filebeat/input"
 	"github.com/elastic/beats/libbeat/logp"
+
+	cfg "github.com/ilijamt/postfixbeat/config"
 )
 
 var debugf = logp.MakeDebug("spooler")
@@ -32,7 +33,7 @@ type Spooler struct {
 // New creates and returns a new Spooler. The returned Spooler must be
 // started by calling Start before it can be used.
 func New(
-	config cfg.FilebeatConfig,
+	config cfg.PostfixbeatConfig,
 	publisher chan<- []*input.FileEvent,
 ) (*Spooler, error) {
 	spoolSize := config.SpoolSize
