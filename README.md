@@ -15,30 +15,6 @@ Ensure that this folder is at the following location:
 * [Golang](https://golang.org/dl/) 1.6
 * [Glide](https://github.com/Masterminds/glide) >= 0.10.0
 
-### Init Project
-To get running with Postfixbeat, run the following command:
-
-```
-make init
-```
-
-To commit the first version before you modify it, run:
-
-```
-make commit
-```
-
-It will create a clean git history for each major step. Note that you can always rewrite the history if you wish before pushing your changes.
-
-To push Postfixbeat in the git repository, run the following commands:
-
-```
-git remote set-url origin https://github.com/ilijamt/postfixbeat
-git push origin master
-```
-
-For further development, check out the [beat developer guide](https://www.elastic.co/guide/en/beats/libbeat/current/new-beat.html).
-
 ### Build
 
 To build the binary for Postfixbeat run the command below. This will generate a binary
@@ -47,7 +23,6 @@ in the same directory with the name postfixbeat.
 ```
 make
 ```
-
 
 ### Run
 
