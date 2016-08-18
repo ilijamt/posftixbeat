@@ -104,6 +104,3 @@ mkdir -p ${GOPATH}/github.com/ilijamt
 cd ${GOPATH}/github.com/ilijamt
 git clone https://github.com/ilijamt/postfixbeat
 ```
-
-
-For further development, check out the [beat developer guide](https://www.elastic.co/guide/en/beats/libbeat/current/new-beat.html).
