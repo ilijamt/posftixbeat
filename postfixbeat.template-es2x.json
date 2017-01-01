@@ -37,13 +37,76 @@
             }
           }
         },
-        "counter": {
+        "delay": {
+          "type": "long"
+        },
+        "domain_from": {
+          "index": "analyzed",
+          "norms": {
+            "enabled": false
+          },
+          "type": "string"
+        },
+        "domain_to": {
+          "index": "analyzed",
+          "norms": {
+            "enabled": false
+          },
+          "type": "string"
+        },
+        "mail_from": {
+          "index": "analyzed",
+          "norms": {
+            "enabled": false
+          },
+          "type": "string"
+        },
+        "mail_to": {
+          "index": "analyzed",
+          "norms": {
+            "enabled": false
+          },
+          "type": "string"
+        },
+        "queue_id": {
+          "index": "analyzed",
+          "norms": {
+            "enabled": false
+          },
+          "type": "string"
+        },
+        "queued_on": {
+          "type": "date"
+        },
+        "relay": {
+          "index": "analyzed",
+          "norms": {
+            "enabled": false
+          },
+          "type": "string"
+        },
+        "size": {
           "type": "long"
         },
         "tags": {
           "ignore_above": 1024,
           "index": "not_analyzed",
           "type": "string"
+        },
+        "time_before_qmgr": {
+          "type": "long"
+        },
+        "time_conn_setup": {
+          "type": "long"
+        },
+        "time_in_qmgr": {
+          "type": "long"
+        },
+        "time_transmission": {
+          "type": "long"
+        },
+        "update_on": {
+          "type": "date"
         }
       }
     }

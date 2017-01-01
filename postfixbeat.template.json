@@ -32,12 +32,57 @@
             }
           }
         },
-        "counter": {
+        "delay": {
+          "type": "long"
+        },
+        "domain_from": {
+          "norms": false,
+          "type": "text"
+        },
+        "domain_to": {
+          "norms": false,
+          "type": "text"
+        },
+        "mail_from": {
+          "norms": false,
+          "type": "text"
+        },
+        "mail_to": {
+          "norms": false,
+          "type": "text"
+        },
+        "queue_id": {
+          "norms": false,
+          "type": "text"
+        },
+        "queued_on": {
+          "type": "date"
+        },
+        "relay": {
+          "norms": false,
+          "type": "text"
+        },
+        "size": {
           "type": "long"
         },
         "tags": {
           "ignore_above": 1024,
           "type": "keyword"
+        },
+        "time_before_qmgr": {
+          "type": "long"
+        },
+        "time_conn_setup": {
+          "type": "long"
+        },
+        "time_in_qmgr": {
+          "type": "long"
+        },
+        "time_transmission": {
+          "type": "long"
+        },
+        "update_on": {
+          "type": "date"
         }
       }
     }

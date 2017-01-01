@@ -70,12 +70,72 @@ None
 
 
 [float]
-=== counter
+=== queue_id
+
+type: text
+
+[float]
+=== mail_from
+
+type: text
+
+[float]
+=== domain_from
+
+type: text
+
+[float]
+=== size
 
 type: long
 
-required: True
+[float]
+=== queued_on
 
-PLEASE UPDATE DOCUMENTATION
+type: date
 
+[float]
+=== mail_to
+
+type: text
+
+[float]
+=== domain_to
+
+type: text
+
+[float]
+=== relay
+
+type: text
+
+[float]
+=== delay
+
+type: long
+
+[float]
+=== time_before_qmgr
+
+type: long
+
+[float]
+=== time_in_qmgr
+
+type: long
+
+[float]
+=== time_conn_setup
+
+type: long
+
+[float]
+=== time_transmission
+
+type: long
+
+[float]
+=== update_on
+
+type: date
 

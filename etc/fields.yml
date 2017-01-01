@@ -2,8 +2,31 @@
   title: postfixbeat
   description:
   fields:
-    - name: counter
+    - name: queue_id
+      type: text
+    - name: mail_from
+      type: text
+    - name: domain_from
+      type: text
+    - name: size
       type: long
-      required: true
-      description: >
-        PLEASE UPDATE DOCUMENTATION
+    - name: queued_on
+      type: date
+    - name: mail_to
+      type: text
+    - name: domain_to
+      type: text
+    - name: relay
+      type: text
+    - name: delay
+      type: long
+    - name: time_before_qmgr
+      type: long
+    - name: time_in_qmgr
+      type: long
+    - name: time_conn_setup
+      type: long
+    - name: time_transmission
+      type: long
+    - name: update_on
+      type: date

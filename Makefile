@@ -15,20 +15,6 @@ init:
 	make update
 	git init
 
-.PHONY: commit
-commit:
-	git add README.md CONTRIBUTING.md
-	git commit -m "Initial commit"
-	git add LICENSE
-	git commit -m "Add the LICENSE"
-	git add .gitignore
-	git commit -m "Add git settings"
-	git add .
-	git reset -- .travis.yml
-	git commit -m "Add postfixbeat"
-	git add .travis.yml
-	git commit -m "Add Travis CI"
-
 .PHONY: update-deps
 update-deps:
 	glide update --no-recursive --strip-vcs

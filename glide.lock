@@ -1,5 +1,5 @@
-hash: cf4d149d7b3bb45b13ec6b44ab745e76310f98255dfe69184b4cc091383b5080
-updated: 2016-08-18T23:32:08.367208154+02:00
+hash: 854a084ee2f0fe440993503cc86884aaaa3bc6cef72b9f269203c6376cdc0a09
+updated: 2016-08-20T16:27:05.100243301+02:00
 imports:
 - name: github.com/davecgh/go-spew
   version: 5215b55f46b2b919f50a1df0eaa5886afe4e3b3d
@@ -16,18 +16,15 @@ imports:
   subpackages:
   - filebeat/input/file
   - filebeat/prospector
-  - filebeat/spooler
   - libbeat/beat
   - libbeat/common
   - libbeat/logp
   - libbeat/publisher
-  - postfixbeat/spooler
-  - filebeat/config
-  - filebeat/input
   - libbeat/cfgfile
+  - libbeat/paths
+  - filebeat/input
   - libbeat/filter
   - libbeat/filter/rules
-  - libbeat/paths
   - libbeat/service
   - libbeat/common/op
   - libbeat/outputs
@@ -37,6 +34,7 @@ imports:
   - libbeat/outputs/kafka
   - libbeat/outputs/logstash
   - libbeat/outputs/redis
+  - filebeat/config
   - filebeat/harvester
   - filebeat/harvester/processor
   - libbeat/common/streambuf
@@ -110,6 +108,8 @@ imports:
   - encoding/traditionalchinese
   - language
   - internal/tag
+- name: gopkg.in/mcuadros/go-syslog.v2
+  version: d3055b9994b88519219253c3d4d4b0fead2abc94
 - name: gopkg.in/yaml.v2
   version: a83829b6f1293c91addabc89d0571c246397bbf4
 testImports:

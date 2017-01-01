@@ -32,7 +32,6 @@ To run Postfixbeat with debugging output enabled, run:
 ./postfixbeat -c postfixbeat.yml -e -d "*"
 ```
 
-
 ### Test
 
 To test Postfixbeat, run the following command:
